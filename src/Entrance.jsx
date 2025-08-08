@@ -1,6 +1,13 @@
+import { useAuth } from "./AuthContext";
 /** Users can enter their name to receive a token from the API. */
 export default function Entrance() {
-  // TODO: call signup when form is submitted
+  const { signup } = useAuth();
+
+  const createUser = (FormData) => {
+    const username = FormData.get("name");
+    signup(username);
+  };
+
 
   return (
     <>
@@ -15,7 +22,7 @@ export default function Entrance() {
         fixed on you. The one on the left opens its mouth, and with a deep,
         rumbling voice, it asks, "Who approaches? Speak your name."
       </p>
-      <form>
+      <form action={createUser}>
         <label>
           Name
           <input name="name" />

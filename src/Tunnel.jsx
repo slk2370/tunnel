@@ -1,5 +1,8 @@
 /** Users can only this component if they are authorized by the API. */
+
+
 export default function Tunnel() {
+
   return (
     <section>
       <p>The tablet vibrates and a jadeite chime rings through the air.</p>
